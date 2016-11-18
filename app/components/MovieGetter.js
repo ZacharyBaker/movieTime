@@ -9,7 +9,7 @@ export default class MovieGetter extends React.Component {
 	constructor(props) {
 	    super(props);
 
-	    this._updateState = this._updateState.bind(this)
+	    this.updateState = this.updateState.bind(this)
 
 
 	    this.state = {
@@ -22,11 +22,9 @@ export default class MovieGetter extends React.Component {
 	    };
   	}
 
-  	_updateState (res) {
+  	updateState (response) {
   		console.log('STATE IS UPDATINGGGGGGG')
-  		this.setState({
-  			response: res
-  		})
+  		this.setState({ response })
   	}
 
 	componentDidMount () {
@@ -40,9 +38,9 @@ export default class MovieGetter extends React.Component {
 		    },
 		    dataType: 'jsonp'
   		})
-		  .then(function (response) {
+		  .then(response => {
 		    console.log('THIS IS THE RESPONSE :)', response);
-		    this._updateState(response);
+		    this.updateState(response);
 		  })
 		  .catch(function (error) {
 		    console.log(error);
