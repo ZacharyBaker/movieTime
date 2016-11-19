@@ -27,25 +27,25 @@ export default class MovieGetter extends React.Component {
   		this.setState({ response })
   	}
 
-	componentDidMount () {
-		console.log('component Did MOUNT DOG');
-		axios.get(this.state.showtimesUrl, {
-		    params: {
-		      startDate: this.state.tomorrow,
-		      zip: this.state.zipcode,
-		      jsonp: 'dataHandler',
-		      api_key: this.state.apikey
-		    },
-		    dataType: 'jsonp'
-  		})
-		  .then(response => {
-		    console.log('THIS IS THE RESPONSE :)', response);
-		    this.updateState(response);
-		  })
-		  .catch(function (error) {
-		    console.log(error);
-		  });
-	}
+	// componentDidMount () {
+	// 	console.log('component Did MOUNT DOG');
+	// 	axios.get(this.state.showtimesUrl, {
+	// 	    params: {
+	// 	      startDate: this.state.tomorrow,
+	// 	      zip: this.state.zipcode,
+	// 	      jsonp: 'dataHandler',
+	// 	      api_key: this.state.apikey
+	// 	    },
+	// 	    dataType: 'jsonp'
+ //  		})
+	// 	  .then(response => {
+	// 	    console.log('THIS IS THE RESPONSE :)', response);
+	// 	    this.updateState(response);
+	// 	  })
+	// 	  .catch(function (error) {
+	// 	    console.log(error);
+	// 	  });
+	// }
 
 
 	render () {
